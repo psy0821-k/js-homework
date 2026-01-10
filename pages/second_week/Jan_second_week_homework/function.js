@@ -81,11 +81,29 @@ function accumulatePoints(paymentAmount, userRank){
   return "가입한 회원만 적립이 가능합니다";
 }
 
-console.log(accumulatePoints());
-
 console.log( ironMan.userRank+ "등급 고객님" + accumulatePoints(10000, ironMan.userRank) + "Point가 적립되었습니다.");
 console.log( batMan.userRank+ "등급 고객님" + accumulatePoints(10000, batMan.userRank) + "Point가 적립되었습니다.");
 console.log( superMan.userRank+ "등급 고객님" + accumulatePoints(10000, superMan.userRank) + "Point가 적립되었습니다.");
 console.log( spiderMan.userRank+ "등급 고객님" + accumulatePoints(10000, spiderMan.userRank) + "Point가 적립되었습니다.");
 
 console.log("==========================================================");
+
+const movieTiketPrice = function(movieType, numberOfPeople, isMorningDiscount){
+  let discount = 1;
+
+  if (isMorningDiscount === true){ discount = 1 - 0.2; }
+  const moviePricePolicy ={
+    "일반" : {price: 14000, type : "일반 영화"},
+    "3D" : {price: 17000, type : "3D 영화"},
+    "IMAX" : {price: 17000, type : "IMAX 영화"},
+  };
+
+  return parseInt(moviePricePolicy[movieType] * parseInt(numberOfPeople) * discount);
+}
+
+console.log("일반", 1, true);
+console.log("일반", 1, false);
+console.log("3D", 1, true);
+console.log("3D", 1, false);
+console.log("IMAX", 1, true);
+console.log("IMAX", 1, false);
