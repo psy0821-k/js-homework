@@ -58,3 +58,14 @@ console.log(deliveryFee("10000","제주"));
 console.log(deliveryFee("0","서울"));
 console.log(deliveryFee("0","제주"));
 
+console.log("==========================================================");
+
+const passwordValidation = (password) => {
+  return 20 >= password.length && password.length >= 8;
+}
+
+console.log(passwordValidation("12345678910"));
+console.log(passwordValidation("1234"));
+console.log(passwordValidation("0123456789012345678901"));
+
+console.log("==========================================================");
