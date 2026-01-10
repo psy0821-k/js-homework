@@ -6,13 +6,7 @@
   
 feront-end  
 - html /css / js  
-  
-백엔드  
-아직 학습이 필요하기 때문에 일단 자바스크립트로 작성후 추후에 적용  
-  
-예상  
-mongoDB (미정)  
-node.js  
+
   
 배포  
 CI/CD : github action  
