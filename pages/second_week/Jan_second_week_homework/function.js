@@ -1,6 +1,7 @@
 function userRankScoreToRank (userScore){
   if ( 85 <= parseFloat(userScore)){ return "vip"; }
-  if ( 70 <= parseFloat(userScore)){ return "silver"; }
+  if ( 70 <= parseFloat(userScore)){ return "gold"; }
+  if ( 60 <= parseFloat(userScore)){ return "silver"; }
   if ( parseInt(userScore) === 0){ return "사용자만 확인이 가능합니다.가입부터 해주세요";}
   return "nomalUser";
 }
@@ -42,7 +43,7 @@ console.log(userWelcomeMessage(guest.userName, guest.userRank));
 
 console.log("==========================================================");
 
-function deliveryFee(orderAmount, delverLocation){
+const deliveryFee = function (orderAmount, delverLocation){
   const DEFAULT_DELEVRY_FEE = 3000;
   let deliveryFee = DEFAULT_DELEVRY_FEE;
   if( 50_000 <= parseInt(orderAmount) || parseInt(orderAmount) <= 0 ){ deliveryFee =  0; }
