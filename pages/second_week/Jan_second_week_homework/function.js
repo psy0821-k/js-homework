@@ -39,3 +39,22 @@ console.log(userWelcomeMessage(ironMan.userName, ironMan.userRank));
 console.log(userWelcomeMessage(batman.userName, batman.userRank));
 console.log(userWelcomeMessage(spiderMan.userName, spiderMan.userRank));
 console.log(userWelcomeMessage(guest.userName, guest.userRank));
+
+console.log("==========================================================");
+
+function deliveryFee(orderAmount, delverLocation){
+  const DEFAULT_DELEVRY_FEE = 3000;
+  let deliveryFee = DEFAULT_DELEVRY_FEE;
+  if( 50_000 <= parseInt(orderAmount) || parseInt(orderAmount) <= 0 ){ deliveryFee =  0; }
+  if(delverLocation === "제주" || delverLocation === "도서"){ deliveryFee +=  3000; }
+
+  return "회원님의 배송비는 : " + deliveryFee + "원 입니다." + typeof(deliveryFee);
+}
+
+console.log(deliveryFee("50000","서울"));
+console.log(deliveryFee("50000","제주"));
+console.log(deliveryFee("10000","서울"));
+console.log(deliveryFee("10000","제주"));
+console.log(deliveryFee("0","서울"));
+console.log(deliveryFee("0","제주"));
+
