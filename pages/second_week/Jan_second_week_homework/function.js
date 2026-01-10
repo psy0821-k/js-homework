@@ -3,7 +3,7 @@ function userRankScoreToRank (userScore){
   if ( 70 <= parseFloat(userScore)){ return "gold"; }
   if ( 60 <= parseFloat(userScore)){ return "silver"; }
   if ( parseInt(userScore) === 0){ return "사용자만 확인이 가능합니다.가입부터 해주세요";}
-  return "nomalUser";
+  return "NORMAL";
 }
 
 function createUser(name, score) {
@@ -15,12 +15,14 @@ function createUser(name, score) {
 }
 
 const ironMan = createUser("아이언맨", 100);
-const batman = createUser("배트맨", 70.78);
+const batMan = createUser("배트맨", 70.78);
+const superMan = createUser("슈퍼맨", 60);
 const spiderMan = createUser("스파이더맨", 10);
 const guest = createUser();
 
-console.log(ironMan.userName);
-console.log(batman.userScore);
+console.log(ironMan.userRank);
+console.log(batMan.userRank);
+console.log(superMan.userRank);
 console.log(spiderMan.userRank);
 console.log(guest);
 
@@ -37,7 +39,7 @@ function userWelcomeMessage (userName, userRank){
 }
 
 console.log(userWelcomeMessage(ironMan.userName, ironMan.userRank));
-console.log(userWelcomeMessage(batman.userName, batman.userRank));
+console.log(userWelcomeMessage(batMan.userName, batMan.userRank));
 console.log(userWelcomeMessage(spiderMan.userName, spiderMan.userRank));
 console.log(userWelcomeMessage(guest.userName, guest.userRank));
 
@@ -68,5 +70,22 @@ const passwordValidation = (password) => {
 console.log(passwordValidation("12345678910"));
 console.log(passwordValidation("1234"));
 console.log(passwordValidation("0123456789012345678901"));
+
+console.log("==========================================================");
+
+function accumulatePoints(paymentAmount, userRank){
+  if(userRank.toUpperCase() === 'VIP'){ return paymentAmount * 0.05; }
+  if(userRank.toUpperCase() === 'GOLD'){ return paymentAmount * 0.03; }
+  if(userRank.toUpperCase() === 'SILVER'){ return paymentAmount * 0.01; }
+  if(userRank.toUpperCase() === 'NORMAL'){ return paymentAmount * 0.005; }
+  return "가입한 회원만 적립이 가능합니다";
+}
+
+console.log(accumulatePoints());
+
+console.log( ironMan.userRank+ "등급 고객님" + accumulatePoints(10000, ironMan.userRank) + "Point가 적립되었습니다.");
+console.log( batMan.userRank+ "등급 고객님" + accumulatePoints(10000, batMan.userRank) + "Point가 적립되었습니다.");
+console.log( superMan.userRank+ "등급 고객님" + accumulatePoints(10000, superMan.userRank) + "Point가 적립되었습니다.");
+console.log( spiderMan.userRank+ "등급 고객님" + accumulatePoints(10000, spiderMan.userRank) + "Point가 적립되었습니다.");
 
 console.log("==========================================================");
