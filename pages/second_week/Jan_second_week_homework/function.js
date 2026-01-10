@@ -1,15 +1,16 @@
 function userRankScoreToRank(userScore) {
-  if (85 <= parseFloat(userScore)) { return "vip"; }
-  if (70 <= parseFloat(userScore)) { return "gold"; }
-  if (60 <= parseFloat(userScore)) { return "silver"; }
-  if (parseInt(userScore) === 0) { return "사용자만 확인이 가능합니다.가입부터 해주세요"; }
-  return "NORMAL";
+  let score = parseFloat(userScore)
+  if (85 <= score) { return "vip"; }
+  if (70 <= score) { return "gold"; }
+  if (60 <= score) { return "silver"; }
+  if (score === 0) { return "guest"; }
+  return "normal";
 }
 
 function createUser(name, score) {
   return {
     userName: name,
-    userScore: score + 10,
+    userScore: score,
     userRank: userRankScoreToRank(score),
   };
 }
@@ -33,10 +34,8 @@ console.log("--------------------------------------------------------------");
 // 선생님의 의견이 궁급합니다.
 
 function userWelcomeMessage(userName, userRank) {
-  if (userRank === "vip") {
-    return "🌟 VIP " + userName + "님, 특별한 혜택이 준비되어 있습니다!";
-  }
   if (userName === undefined) { return "비정상적인 접근방식 입니다"; }
+  if (userRank === "vip") { return "🌟 VIP " + userName + "님, 특별한 혜택이 준비되어 있습니다!"; }
   return "안녕하세요, " + userName + "님! 즐거운 쇼핑 되세요." + typeof userName;
 }
 
@@ -77,14 +76,14 @@ console.log("==========================================================");
 
 function accumulatePoints(paymentAmount, userRank) {
   const pointRatePolicy = {
-    VIP: 5 / 100,
-    GOLD: 3 / 100,
-    SILVER: 1 / 100,
-    NORMAL: 0.5 / 100,
+    VIP: 0.05,
+    GOLD: 0.03,
+    SILVER: 0.01,
+    NORMAL: 0.005,
   };
 
   if (userRank === "guest") { return "가입한 회원만 적립이 가능합니다"; }
-  return paymentAmount * pointRatePolicy[userRank];
+  return paymentAmount * parseFloat(pointRatePolicy[userRank.toUpperCase()]);
 }
 
 console.log( ironMan.userRank +"등급 고객님" + accumulatePoints(10000, ironMan.userRank) + "Point가 적립되었습니다." );
