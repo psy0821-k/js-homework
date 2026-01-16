@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  position: absolute;
+  inset: 0;
+  clip-path: rect(0, 0, 0, 0);
+}
