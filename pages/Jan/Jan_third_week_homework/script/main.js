@@ -1,10 +1,3 @@
-// 이벤트는 클릭이벤트를 통해 작성
-// 최대한 클래스를 이용해 값을 변경하는 방식 사용
-// css변경 및 글자 수정은 최소화
-
-// 1. 게임정보 객체 생성
-// 들어갈 정보 게임 이름 /게임 배경 및 캐릭터 이미지/ 설명/ 게임 장르/ 게임 id값
-// id값은 데이터를 표기할 때 사용 예정
 const PANGENATION = document.querySelector('.pagenation');
 const TOTAL_PAGE = PANGENATION.querySelector('.totalPage');
 const NOW_PAGE = PANGENATION.querySelector('.nowPage');
@@ -19,30 +12,26 @@ const GAME_DESCRIPTION = RECOMEND_GAMES.querySelectorAll('.gameDescription');
 const GAME_TYPE = RECOMEND_GAMES.querySelectorAll('.gameType');
 
 const IMAGE_PATH = './asset/img/';
-//객체생성
-function gameInformation(gameId, gameName, gameBackgroundImage, gameCharactorImage, gameDescription, gameType) {
+
+//게임에 대한 객체생성
+function gameInformation(gameName, gameBackgroundClass, gameCharacterImage, gameDescription, gameType) {
   return {
-    gameId: gameId,
     gameName: gameName,
-    gameBackgroundImage: gameBackgroundImage,
-    gameCharactorImage: gameCharactorImage,
+    gameBackgroundClass: gameBackgroundClass,
+    gameCharacterImage: gameCharacterImage,
     gameDescription: gameDescription,
     gameType: gameType,
   };
 }
 
 const games = {
-  0: gameInformation(0, '크로노 오디세이', '배경-0.wepb', '캐릭터-0.png', '멈춰 있던 시간이 흐른다', 'MMO RPG'),
-  1: gameInformation(1, '아케이지 워', '배경-1.wepb', '캐릭터-1.png', '시대의 전설을 향해', 'MMO RPG'),
-  2: gameInformation(2, '패스오브 액자일 2', '배경-2.wepb', '캐릭터-2.png', '얼리 액세스 오픈!', '핵앤슬래쉬'),
-  3: gameInformation(3, '오딘:발할라 라이징', '배경-3.wepb', '캐릭터-3.png', '신의 영역을 차지하라', 'MMO RPG'),
-  4: gameInformation(4, '롬:리멤버 오브 미제스티', '배경-4.wepb', '캐릭터-4.png', '멈춰 있던 시간이 흐른다', 'MMO RPG'),
-  5: gameInformation(5, '배틀그라운드', '배경-5.wepb', '캐릭터-5.png', '최후까지 생존하라!', '배틀로얄'),
+  0: gameInformation('크로노 오디세이', 'bg0', '캐릭터-0.png', '멈춰 있던 시간이 흐른다', 'MMO RPG'),
+  1: gameInformation('아케이지 워', 'bg1', '캐릭터-1.png', '시대의 전설을 향해', 'MMO RPG'),
+  2: gameInformation('패스오브 액자일 2', 'bg2', '캐릭터-2.png', '얼리 액세스 오픈!', '핵앤슬래쉬'),
+  3: gameInformation('오딘:발할라 라이징', 'bg3', '캐릭터-3.png', '신의 영역을 차지하라', 'MMO RPG'),
+  4: gameInformation('롬:리멤버 오브 미제스티', 'bg4', '캐릭터-4.png', '멈춰 있던 시간이 흐른다', 'MMO RPG'),
+  5: gameInformation('배틀그라운드', 'bg5', '캐릭터-5.png', '최후까지 생존하라!', '배틀로얄'),
 };
-
-// 최초 실행 시 현재 페이지 및 이미지 적용
-let pageCount = 1;
-getGameInformation();
 
 // 추천게임 페이지 넘버 및 버튼 관련 기능
 function pageTotalNumber(gameQuantity) {
@@ -50,37 +39,34 @@ function pageTotalNumber(gameQuantity) {
 }
 
 // 백그라운드 이미지 초기화 기능
-
 function resetBackgroundImage() {
-  BACKGROUND_IMAGE.item(0).classList.remove('bg0');
-  BACKGROUND_IMAGE.item(1).classList.remove('bg1');
-  BACKGROUND_IMAGE.item(0).classList.remove('bg2');
-  BACKGROUND_IMAGE.item(1).classList.remove('bg3');
-  BACKGROUND_IMAGE.item(0).classList.remove('bg4');
-  BACKGROUND_IMAGE.item(1).classList.remove('bg5');
+  BACKGROUND_IMAGE.item(0).classList.remove(games[0].gameBackgroundClass);
+  BACKGROUND_IMAGE.item(1).classList.remove(games[1].gameBackgroundClass);
+  BACKGROUND_IMAGE.item(0).classList.remove(games[2].gameBackgroundClass);
+  BACKGROUND_IMAGE.item(1).classList.remove(games[3].gameBackgroundClass);
+  BACKGROUND_IMAGE.item(0).classList.remove(games[4].gameBackgroundClass);
+  BACKGROUND_IMAGE.item(1).classList.remove(games[5].gameBackgroundClass);
 }
 
 // 게임 정보 입력 기능
-
 function setGameInformation(firstIndex, secondIndex) {
   resetBackgroundImage();
-  //게임 캐릭터 이미지
-  CHARACTER_IMAGE.item(0).src = IMAGE_PATH + games[firstIndex].gameCharactorImage;
-  CHARACTER_IMAGE.item(1).src = IMAGE_PATH + games[secondIndex].gameCharactorImage;
-  //배경
-  BACKGROUND_IMAGE.item(0).classList.add('bg' + firstIndex);
+  CHARACTER_IMAGE.item(0).src = IMAGE_PATH + games[firstIndex].gameCharacterImage;
+  CHARACTER_IMAGE.item(1).src = IMAGE_PATH + games[secondIndex].gameCharacterImage;
+
+  BACKGROUND_IMAGE.item(0).classList.add(games[firstIndex].gameBackgroundClass);
+  BACKGROUND_IMAGE.item(1).classList.add(games[secondIndex].gameBackgroundClass);
+
   BACKGROUND_IMAGE.item(1).classList.add('bg' + secondIndex);
-  // 제목
   GAME_TITLE.item(0).textContent = games[firstIndex].gameName;
   GAME_TITLE.item(1).textContent = games[secondIndex].gameName;
-  // 설명
   GAME_DESCRIPTION.item(0).textContent = games[firstIndex].gameDescription;
   GAME_DESCRIPTION.item(1).textContent = games[secondIndex].gameDescription;
-  //게임장르
   GAME_TYPE.item(0).textContent = games[firstIndex].gameType;
   GAME_TYPE.item(1).textContent = games[secondIndex].gameType;
 }
 
+//  게임 정보 출력 기능
 function getGameInformation() {
   if (pageCount === 1) {
     setGameInformation(0, 1);
@@ -91,10 +77,8 @@ function getGameInformation() {
   }
 }
 
-// 총 페이지와 이전 다음 버튼 기능
-
-TOTAL_PAGE.textContent = parseInt(pageTotalNumber(Object.keys(games).length));
-function handlerPageNextNumber() {
+// 총 페이지 계산 기능과 이전 다음 버튼 기능
+function handlerNextPage() {
   pageCount++;
   if (pageCount >= 4) {
     pageCount = 1;
@@ -103,7 +87,7 @@ function handlerPageNextNumber() {
   NOW_PAGE.textContent = pageCount;
 }
 
-function handlerPagePrevNumber() {
+function handlerPriviousPage() {
   pageCount--;
   if (pageCount < 1) {
     pageCount = 3;
@@ -111,5 +95,11 @@ function handlerPagePrevNumber() {
   getGameInformation();
   NOW_PAGE.textContent = pageCount;
 }
-NEXT_BUTTON.addEventListener('click', handlerPageNextNumber);
-PRIVIOUS_BUTTON.addEventListener('click', handlerPagePrevNumber);
+
+// 최초 실행 시 현재 페이지 및 이미지 적용
+let pageCount = 1;
+getGameInformation();
+
+TOTAL_PAGE.textContent = parseInt(pageTotalNumber(Object.keys(games).length));
+NEXT_BUTTON.addEventListener('click', handlerNextPage);
+PRIVIOUS_BUTTON.addEventListener('click', handlerPriviousPage);
