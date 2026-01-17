@@ -61,7 +61,6 @@
 
           .game-image {
             position: absolute;
-            background-image: url(../../img/배경.webp);
             background-position: bottom;
             background-repeat: no-repeat;
             background-size: cover;
@@ -143,4 +142,23 @@
   font-family: 'notosansRegular', sans-serif;
   font-size: 18px;
   line-height: 20px;
+}
+
+.bg0 {
+  background-image: url(../../img/배경-0.webp);
+}
+.bg1 {
+  background-image: url(../../img/배경-1.webp);
+}
+.bg2 {
+  background-image: url(../../img/배경-2.webp);
+}
+.bg3 {
+  background-image: url(../../img/배경-3.webp);
+}
+.bg4 {
+  background-image: url(../../img/배경-4.webp);
+}
+.bg5 {
+  background-image: url(../../img/배경-5.webp);
 }
