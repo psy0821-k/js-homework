@@ -9,7 +9,7 @@
 }
 
 /* 큰 제목 노토산스 볼드 18px */
-.recomand-game-header {
+.recomandGameHeader {
   display: flex;
   align-items: center;
   inline-size: 100%;
@@ -39,7 +39,7 @@
   }
 }
 
-.recomand-game-middle {
+.recomandGameMiddle {
   ul {
     height: 246px;
     display: flex;
@@ -52,14 +52,14 @@
             transform: scale(1.05);
           }
         }
-        .game-image-wrap {
+        .gameImageWrap {
           position: relative;
           width: 160px;
           height: 172px;
           border-radius: 8px;
           overflow: hidden;
 
-          .game-image {
+          .gameImage {
             position: absolute;
             background-position: bottom;
             background-repeat: no-repeat;
@@ -79,14 +79,14 @@
           }
         }
 
-        .game-title {
+        .gameTitle {
           font-family: 'notosansBold', sans-serif;
           margin-top: 8px;
           letter-spacing: -0.02em;
           line-height: 15px;
         }
 
-        .game-description {
+        .gameDescription {
           font-family: 'notosansRegular', sans-serif;
           font-size: 14px;
           margin-top: 2px;
@@ -95,7 +95,7 @@
           letter-spacing: -0.01em;
         }
 
-        .game-type {
+        .gameType {
           font-family: 'notosansLight', sans-serif;
           color: #0000007a;
           font-size: 14px;

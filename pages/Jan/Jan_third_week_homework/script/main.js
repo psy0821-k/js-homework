@@ -6,21 +6,21 @@
 // 들어갈 정보 게임 이름 /게임 배경 및 캐릭터 이미지/ 설명/ 게임 장르/ 게임 id값
 // id값은 데이터를 표기할 때 사용 예정
 const PANGENATION = document.querySelector('.pagenation');
-const totalPageNumber = PANGENATION.querySelector('.totalPage');
-const nowPageNumber = PANGENATION.querySelector('.nowPage');
-const prevButton = PANGENATION.querySelector('.prevButton');
-const nextButton = PANGENATION.querySelector('.nextButton');
-const RECOMEND_GAMES = document.querySelector('.recomandGamesContainer');
+const TOTAL_PAGE = PANGENATION.querySelector('.totalPage');
+const NOW_PAGE = PANGENATION.querySelector('.nowPage');
+const PRIVIOUS_BUTTON = PANGENATION.querySelector('.prevButton');
+const NEXT_BUTTON = PANGENATION.querySelector('.nextButton');
 
-const characterImg = document.querySelectorAll('img');
-const backgroundImg = document.querySelectorAll('.game-image');
-const gameTitle = document.querySelectorAll('.game-title');
-const gameDescription = document.querySelectorAll('.game-description');
-const gameType = document.querySelectorAll('.game-type');
+const RECOMEND_GAMES = document.querySelector('.recomandGamesContainer');
+const CHARACTER_IMAGE = RECOMEND_GAMES.querySelectorAll('img');
+const BACKGROUND_IMAGE = RECOMEND_GAMES.querySelectorAll('.gameImage');
+const GAME_TITLE = RECOMEND_GAMES.querySelectorAll('.gameTitle');
+const GAME_DESCRIPTION = RECOMEND_GAMES.querySelectorAll('.gameDescription');
+const GAME_TYPE = RECOMEND_GAMES.querySelectorAll('.gameType');
 
 const IMAGE_PATH = './asset/img/';
 //객체생성
-function gameInfo(gameId, gameName, gameBackgroundImage, gameCharactorImage, gameDescription, gameType) {
+function gameInformation(gameId, gameName, gameBackgroundImage, gameCharactorImage, gameDescription, gameType) {
   return {
     gameId: gameId,
     gameName: gameName,
@@ -31,12 +31,12 @@ function gameInfo(gameId, gameName, gameBackgroundImage, gameCharactorImage, gam
   };
 }
 
-const game0 = gameInfo(0, '크로노 오디세이', '배경-0.wepb', '캐릭터-0.png', '멈춰 있던 시간이 흐른다', 'MMO RPG');
-const game1 = gameInfo(1, '아케이지 워', '배경-1.wepb', '캐릭터-1.png', '시대의 전설을 향해', 'MMO RPG');
-const game2 = gameInfo(2, '패스오브 액자일 2', '배경-2.wepb', '캐릭터-2.png', '얼리 액세스 오픈!', '핵앤슬래쉬');
-const game3 = gameInfo(3, '오딘:발할라 라이징', '배경-3.wepb', '캐릭터-3.png', '신의 영역을 차지하라', 'MMO RPG');
-const game4 = gameInfo(4, '롬:리멤버 오브 미제스티', '배경-4.wepb', '캐릭터-4.png', '멈춰 있던 시간이 흐른다', 'MMO RPG');
-const game5 = gameInfo(5, '배틀그라운드', '배경-5.wepb', '캐릭터-5.png', '최후까지 생존하라!', '배틀로얄');
+const game0 = gameInformation(0, '크로노 오디세이', '배경-0.wepb', '캐릭터-0.png', '멈춰 있던 시간이 흐른다', 'MMO RPG');
+const game1 = gameInformation(1, '아케이지 워', '배경-1.wepb', '캐릭터-1.png', '시대의 전설을 향해', 'MMO RPG');
+const game2 = gameInformation(2, '패스오브 액자일 2', '배경-2.wepb', '캐릭터-2.png', '얼리 액세스 오픈!', '핵앤슬래쉬');
+const game3 = gameInformation(3, '오딘:발할라 라이징', '배경-3.wepb', '캐릭터-3.png', '신의 영역을 차지하라', 'MMO RPG');
+const game4 = gameInformation(4, '롬:리멤버 오브 미제스티', '배경-4.wepb', '캐릭터-4.png', '멈춰 있던 시간이 흐른다', 'MMO RPG');
+const game5 = gameInformation(5, '배틀그라운드', '배경-5.wepb', '캐릭터-5.png', '최후까지 생존하라!', '배틀로얄');
 
 let pageCount = 1;
 imageHandeler();
@@ -49,64 +49,64 @@ function pageTotalNumber(gameQuantity) {
 function imageHandeler() {
   if (pageCount === 1) {
     // 캐릭터
-    characterImg.item(0).src = IMAGE_PATH + game0.gameCharactorImage;
-    characterImg.item(1).src = IMAGE_PATH + game1.gameCharactorImage;
+    CHARACTER_IMAGE.item(0).src = IMAGE_PATH + game0.gameCharactorImage;
+    CHARACTER_IMAGE.item(1).src = IMAGE_PATH + game1.gameCharactorImage;
     //백그라운드
-    backgroundImg.item(0).classList.remove('bg2');
-    backgroundImg.item(1).classList.remove('bg3');
-    backgroundImg.item(0).classList.remove('bg4');
-    backgroundImg.item(1).classList.remove('bg5');
+    BACKGROUND_IMAGE.item(0).classList.remove('bg2');
+    BACKGROUND_IMAGE.item(1).classList.remove('bg3');
+    BACKGROUND_IMAGE.item(0).classList.remove('bg4');
+    BACKGROUND_IMAGE.item(1).classList.remove('bg5');
 
-    backgroundImg.item(0).classList.add('bg0');
-    backgroundImg.item(1).classList.add('bg1');
+    BACKGROUND_IMAGE.item(0).classList.add('bg0');
+    BACKGROUND_IMAGE.item(1).classList.add('bg1');
     // 제목
-    gameTitle.item(0).textContent = game0.gameName;
-    gameTitle.item(1).textContent = game1.gameName;
+    GAME_TITLE.item(0).textContent = game0.gameName;
+    GAME_TITLE.item(1).textContent = game1.gameName;
     // 설명
-    gameDescription.item(0).textContent = game0.gameDescription;
-    gameDescription.item(1).textContent = game1.gameDescription;
+    GAME_DESCRIPTION.item(0).textContent = game0.gameDescription;
+    GAME_DESCRIPTION.item(1).textContent = game1.gameDescription;
     //게임장르
-    gameType.item(0).textContent = game0.gameType;
-    gameType.item(1).textContent = game1.gameType;
+    GAME_TYPE.item(0).textContent = game0.gameType;
+    GAME_TYPE.item(1).textContent = game1.gameType;
   } else if (pageCount === 2) {
-    characterImg.item(0).src = IMAGE_PATH + game2.gameCharactorImage;
-    characterImg.item(1).src = IMAGE_PATH + game3.gameCharactorImage;
+    CHARACTER_IMAGE.item(0).src = IMAGE_PATH + game2.gameCharactorImage;
+    CHARACTER_IMAGE.item(1).src = IMAGE_PATH + game3.gameCharactorImage;
     //배경
-    backgroundImg.item(0).classList.remove('bg0');
-    backgroundImg.item(1).classList.remove('bg1');
-    backgroundImg.item(0).classList.remove('bg4');
-    backgroundImg.item(1).classList.remove('bg5');
-    backgroundImg.item(0).classList.add('bg2');
-    backgroundImg.item(1).classList.add('bg3');
+    BACKGROUND_IMAGE.item(0).classList.remove('bg0');
+    BACKGROUND_IMAGE.item(1).classList.remove('bg1');
+    BACKGROUND_IMAGE.item(0).classList.remove('bg4');
+    BACKGROUND_IMAGE.item(1).classList.remove('bg5');
+    BACKGROUND_IMAGE.item(0).classList.add('bg2');
+    BACKGROUND_IMAGE.item(1).classList.add('bg3');
     // 제목
-    gameTitle.item(0).textContent = game2.gameName;
-    gameTitle.item(1).textContent = game3.gameName;
+    GAME_TITLE.item(0).textContent = game2.gameName;
+    GAME_TITLE.item(1).textContent = game3.gameName;
     // 설명
-    gameDescription.item(0).textContent = game2.gameDescription;
-    gameDescription.item(1).textContent = game3.gameDescription;
+    GAME_DESCRIPTION.item(0).textContent = game2.gameDescription;
+    GAME_DESCRIPTION.item(1).textContent = game3.gameDescription;
     //게임장르
-    gameType.item(0).textContent = game2.gameType;
-    gameType.item(1).textContent = game3.gameType;
+    GAME_TYPE.item(0).textContent = game2.gameType;
+    GAME_TYPE.item(1).textContent = game3.gameType;
   } else {
-    characterImg.item(0).src = IMAGE_PATH + game4.gameCharactorImage;
-    characterImg.item(1).src = IMAGE_PATH + game5.gameCharactorImage;
+    CHARACTER_IMAGE.item(0).src = IMAGE_PATH + game4.gameCharactorImage;
+    CHARACTER_IMAGE.item(1).src = IMAGE_PATH + game5.gameCharactorImage;
     //배경
-    backgroundImg.item(0).classList.remove('bg0');
-    backgroundImg.item(1).classList.remove('bg1');
-    backgroundImg.item(0).classList.remove('bg2');
-    backgroundImg.item(1).classList.remove('bg3');
+    BACKGROUND_IMAGE.item(0).classList.remove('bg0');
+    BACKGROUND_IMAGE.item(1).classList.remove('bg1');
+    BACKGROUND_IMAGE.item(0).classList.remove('bg2');
+    BACKGROUND_IMAGE.item(1).classList.remove('bg3');
 
-    backgroundImg.item(0).classList.add('bg4');
-    backgroundImg.item(1).classList.add('bg5');
+    BACKGROUND_IMAGE.item(0).classList.add('bg4');
+    BACKGROUND_IMAGE.item(1).classList.add('bg5');
     // 제목
-    gameTitle.item(0).textContent = game4.gameName;
-    gameTitle.item(1).textContent = game5.gameName;
+    GAME_TITLE.item(0).textContent = game4.gameName;
+    GAME_TITLE.item(1).textContent = game5.gameName;
     // 설명
-    gameDescription.item(0).textContent = game4.gameDescription;
-    gameDescription.item(1).textContent = game5.gameDescription;
+    GAME_DESCRIPTION.item(0).textContent = game4.gameDescription;
+    GAME_DESCRIPTION.item(1).textContent = game5.gameDescription;
     //게임장르
-    gameType.item(0).textContent = game4.gameType;
-    gameType.item(1).textContent = game5.gameType;
+    GAME_TYPE.item(0).textContent = game4.gameType;
+    GAME_TYPE.item(1).textContent = game5.gameType;
   }
 }
 
@@ -116,7 +116,7 @@ function handlerPageNextNumber() {
     pageCount = 1;
   }
   imageHandeler();
-  nowPageNumber.textContent = pageCount;
+  NOW_PAGE.textContent = pageCount;
 }
 
 function handlerPagePrevNumber() {
@@ -125,9 +125,7 @@ function handlerPagePrevNumber() {
     pageCount = 3;
   }
   imageHandeler();
-  nowPageNumber.textContent = pageCount;
+  NOW_PAGE.textContent = pageCount;
 }
-nextButton.addEventListener('click', handlerPageNextNumber);
-prevButton.addEventListener('click', handlerPagePrevNumber);
-
-console.log(backgroundImg);
+NEXT_BUTTON.addEventListener('click', handlerPageNextNumber);
+PRIVIOUS_BUTTON.addEventListener('click', handlerPagePrevNumber);
