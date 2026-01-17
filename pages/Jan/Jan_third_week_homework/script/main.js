@@ -33,11 +33,27 @@ const games = {
   5: gameInformation('배틀그라운드', 'bg5', '캐릭터-5.png', '최후까지 생존하라!', '배틀로얄'),
 };
 
-// 추천게임 페이지 넘버 및 버튼 관련 기능
+// 추천게임 페이지 넘버 및 이전 다음 버튼 관련 기능
 function pageTotalNumber(gameQuantity) {
   return Math.ceil(gameQuantity / 2);
 }
+function handlerNextPage() {
+  pageCount++;
+  if (pageCount >= 4) {
+    pageCount = 1;
+  }
+  getGameInformation();
+  NOW_PAGE.textContent = pageCount;
+}
 
+function handlerPriviousPage() {
+  pageCount--;
+  if (pageCount < 1) {
+    pageCount = 3;
+  }
+  getGameInformation();
+  NOW_PAGE.textContent = pageCount;
+}
 // 백그라운드 이미지 초기화 기능
 function resetBackgroundImage() {
   BACKGROUND_IMAGE.item(0).classList.remove(games[0].gameBackgroundClass);
@@ -75,25 +91,6 @@ function getGameInformation() {
   } else {
     setGameInformation(4, 5);
   }
-}
-
-// 총 페이지 계산 기능과 이전 다음 버튼 기능
-function handlerNextPage() {
-  pageCount++;
-  if (pageCount >= 4) {
-    pageCount = 1;
-  }
-  getGameInformation();
-  NOW_PAGE.textContent = pageCount;
-}
-
-function handlerPriviousPage() {
-  pageCount--;
-  if (pageCount < 1) {
-    pageCount = 3;
-  }
-  getGameInformation();
-  NOW_PAGE.textContent = pageCount;
 }
 
 // 최초 실행 시 현재 페이지 및 이미지 적용
