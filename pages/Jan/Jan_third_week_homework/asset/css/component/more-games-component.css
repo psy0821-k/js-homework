@@ -61,7 +61,7 @@
 
           .game-image {
             position: absolute;
-            background-image: url(../img/배경.webp);
+            background-image: url(../../img/배경.webp);
             background-position: bottom;
             background-repeat: no-repeat;
             background-size: cover;
