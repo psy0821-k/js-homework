@@ -3,17 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+ul,
+li {
+  list-style: none;
+}
 a {
   text-decoration: none;
   color: #000;
 }
 
 .sr-only {
+  position: absolute;
   width: 1px;
   height: 1px;
-  font-size: 1px;
-  position: absolute;
+  overflow: hidden;
   inset: 0;
-  clip-path: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

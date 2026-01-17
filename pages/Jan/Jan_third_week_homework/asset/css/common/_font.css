@@ -1,17 +1,14 @@
 @font-face {
   font-family: 'notosansBold';
-  src: url(../../font/NotoSansKR-Bold.ttf) format('truetype');
-  font-weight: 700;
-  font-style: normal;
+  src: url('../../font/NotoSansKR-Bold.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'notosansLight';
-  src: url(../../font/NotoSansKR-Light.ttf) format('truetype');
-  font-weight: 350;
-  font-style: normal;
+  src: url('../../font/NotoSansKR-Light.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'notosansRegular';
-  src: url(../../font/NotoSansKR-Regular.ttf) format('truetype');
+  src: url('../../font/NotoSansKR-Regular.ttf') format('truetype');
 }

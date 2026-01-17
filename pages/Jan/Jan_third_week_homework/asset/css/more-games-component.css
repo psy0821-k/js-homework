@@ -1,4 +1,7 @@
 .recomandGamesContainer {
+  margin-top: 100px;
+  margin-left: 100px;
+
   inline-size: 384px;
   block-size: 372px;
   border-radius: 16px;
@@ -11,7 +14,6 @@
   align-items: center;
   inline-size: 100%;
   block-size: 64px;
-  /* white-space: nowrap; */
 
   a {
     display: flex;
@@ -26,10 +28,119 @@
     &:hover {
       background-color: #f5f5f5;
     }
+    &:focus {
+      outline: 1px solid #2049df;
+    }
     h1 {
       font-family: 'notosansBold', sans-serif;
       font-size: 18px;
       padding: 2px 6px;
     }
   }
+}
+
+.recomand-game-middle {
+  ul {
+    height: 246px;
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+    li {
+      a {
+        &:hover {
+          img {
+            transform: scale(1.05);
+          }
+        }
+        .game-image-wrap {
+          position: relative;
+          width: 160px;
+          height: 172px;
+          border-radius: 8px;
+          overflow: hidden;
+
+          .game-image {
+            position: absolute;
+            background-image: url(../img/배경.webp);
+            background-position: bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
+            inline-size: 160px;
+            block-size: 160px;
+            border-radius: 8px;
+            bottom: 0;
+            img {
+              position: absolute;
+              bottom: 0;
+              display: block;
+              width: 160px;
+              height: 172px;
+              transition: all 0.3s;
+            }
+          }
+        }
+
+        .game-title {
+          font-family: 'notosansBold', sans-serif;
+          margin-top: 8px;
+          letter-spacing: -0.02em;
+          line-height: 15px;
+        }
+
+        .game-description {
+          font-family: 'notosansRegular', sans-serif;
+          font-size: 14px;
+          margin-top: 2px;
+          line-height: 15px;
+
+          letter-spacing: -0.01em;
+        }
+
+        .game-type {
+          font-family: 'notosansLight', sans-serif;
+          color: #0000007a;
+          font-size: 14px;
+          margin-top: 8px;
+          line-height: 18px;
+          letter-spacing: -0.01em;
+        }
+      }
+    }
+  }
+}
+
+.pagenation {
+  display: flex;
+  bottom: 0;
+  inline-size: 100%;
+  block-size: 62px;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    display: flex;
+    background-color: white;
+    border: 1px solid hsl(0, 0%, 8%);
+    justify-content: center;
+    align-items: center;
+    inline-size: 40px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &:focus {
+      outline: 1px solid #2049df;
+    }
+  }
+}
+.pageNumberWrap {
+  margin-inline: 12px;
+  font-family: 'notosansRegular', sans-serif;
+  font-size: 18px;
+  line-height: 20px;
 }
