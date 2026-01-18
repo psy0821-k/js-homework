@@ -1,15 +1,15 @@
-const PANGENATION = document.querySelector('.pagenation');
-const TOTAL_PAGE = PANGENATION.querySelector('.totalPage');
-const NOW_PAGE = PANGENATION.querySelector('.nowPage');
-const PRIVIOUS_BUTTON = PANGENATION.querySelector('.prevButton');
-const NEXT_BUTTON = PANGENATION.querySelector('.nextButton');
+const pagenation = document.querySelector('.pagenation');
+const totalPage = pagenation.querySelector('.totalPage');
+const nowPage = pagenation.querySelector('.nowPage');
+const previosButtom = pagenation.querySelector('.prevButton');
+const nextButton = pagenation.querySelector('.nextButton');
 
-const RECOMEND_GAMES = document.querySelector('.recomandGamesContainer');
-const CHARACTER_IMAGE = RECOMEND_GAMES.querySelectorAll('img');
-const BACKGROUND_IMAGE = RECOMEND_GAMES.querySelectorAll('.gameImage');
-const GAME_TITLE = RECOMEND_GAMES.querySelectorAll('.gameTitle');
-const GAME_DESCRIPTION = RECOMEND_GAMES.querySelectorAll('.gameDescription');
-const GAME_TYPE = RECOMEND_GAMES.querySelectorAll('.gameType');
+const recomandGames = document.querySelector('.recomandGamesContainer');
+const characterImage = recomandGames.querySelectorAll('img');
+const backgroundImage = recomandGames.querySelectorAll('.gameImage');
+const gameTitle = recomandGames.querySelectorAll('.gameTitle');
+const gameDescription = recomandGames.querySelectorAll('.gameDescription');
+const gameType = recomandGames.querySelectorAll('.gameType');
 
 const IMAGE_PATH = './asset/img/';
 
@@ -43,7 +43,7 @@ function handlerNextPage() {
     pageCount = 1;
   }
   getGameInformation();
-  NOW_PAGE.textContent = pageCount;
+  nowPage.textContent = pageCount;
 }
 
 function handlerPriviousPage() {
@@ -52,34 +52,31 @@ function handlerPriviousPage() {
     pageCount = 3;
   }
   getGameInformation();
-  NOW_PAGE.textContent = pageCount;
+  nowPage.textContent = pageCount;
 }
 // 백그라운드 이미지 초기화 기능
 function resetBackgroundImage() {
-  BACKGROUND_IMAGE.item(0).classList.remove(games[0].gameBackgroundClass);
-  BACKGROUND_IMAGE.item(1).classList.remove(games[1].gameBackgroundClass);
-  BACKGROUND_IMAGE.item(0).classList.remove(games[2].gameBackgroundClass);
-  BACKGROUND_IMAGE.item(1).classList.remove(games[3].gameBackgroundClass);
-  BACKGROUND_IMAGE.item(0).classList.remove(games[4].gameBackgroundClass);
-  BACKGROUND_IMAGE.item(1).classList.remove(games[5].gameBackgroundClass);
+  backgroundImage.item(0).classList.remove(games[0].gameBackgroundClass);
+  backgroundImage.item(1).classList.remove(games[1].gameBackgroundClass);
+  backgroundImage.item(0).classList.remove(games[2].gameBackgroundClass);
+  backgroundImage.item(1).classList.remove(games[3].gameBackgroundClass);
+  backgroundImage.item(0).classList.remove(games[4].gameBackgroundClass);
+  backgroundImage.item(1).classList.remove(games[5].gameBackgroundClass);
 }
 
 // 게임 정보 입력 기능
 function setGameInformation(firstIndex, secondIndex) {
   resetBackgroundImage();
-  CHARACTER_IMAGE.item(0).src = IMAGE_PATH + games[firstIndex].gameCharacterImage;
-  CHARACTER_IMAGE.item(1).src = IMAGE_PATH + games[secondIndex].gameCharacterImage;
-
-  BACKGROUND_IMAGE.item(0).classList.add(games[firstIndex].gameBackgroundClass);
-  BACKGROUND_IMAGE.item(1).classList.add(games[secondIndex].gameBackgroundClass);
-
-  BACKGROUND_IMAGE.item(1).classList.add('bg' + secondIndex);
-  GAME_TITLE.item(0).textContent = games[firstIndex].gameName;
-  GAME_TITLE.item(1).textContent = games[secondIndex].gameName;
-  GAME_DESCRIPTION.item(0).textContent = games[firstIndex].gameDescription;
-  GAME_DESCRIPTION.item(1).textContent = games[secondIndex].gameDescription;
-  GAME_TYPE.item(0).textContent = games[firstIndex].gameType;
-  GAME_TYPE.item(1).textContent = games[secondIndex].gameType;
+  characterImage.item(0).src = IMAGE_PATH + games[firstIndex].gameCharacterImage;
+  characterImage.item(1).src = IMAGE_PATH + games[secondIndex].gameCharacterImage;
+  backgroundImage.item(0).classList.add(games[firstIndex].gameBackgroundClass);
+  backgroundImage.item(1).classList.add(games[secondIndex].gameBackgroundClass);
+  gameTitle.item(0).textContent = games[firstIndex].gameName;
+  gameTitle.item(1).textContent = games[secondIndex].gameName;
+  gameDescription.item(0).textContent = games[firstIndex].gameDescription;
+  gameDescription.item(1).textContent = games[secondIndex].gameDescription;
+  gameType.item(0).textContent = games[firstIndex].gameType;
+  gameType.item(1).textContent = games[secondIndex].gameType;
 }
 
 //  게임 정보 출력 기능
@@ -97,6 +94,6 @@ function getGameInformation() {
 let pageCount = 1;
 getGameInformation();
 
-TOTAL_PAGE.textContent = parseInt(pageTotalNumber(Object.keys(games).length));
-NEXT_BUTTON.addEventListener('click', handlerNextPage);
-PRIVIOUS_BUTTON.addEventListener('click', handlerPriviousPage);
+totalPage.textContent = parseInt(pageTotalNumber(Object.keys(games).length));
+nextButton.addEventListener('click', handlerNextPage);
+previosButtom.addEventListener('click', handlerPriviousPage);
