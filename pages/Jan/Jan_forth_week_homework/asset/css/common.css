@@ -12,3 +12,12 @@ ul,
 li {
   list-style: none;
 }
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  inset: 0;
+  clip-path: rect(1, 1, 1, 1);
+  white-space: nowrap;
+}
