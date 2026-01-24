@@ -1,6 +1,15 @@
-const buttons = document.querySelector('.button');
+const tabHeader = document.getElementById('tab-header');
+const buttons = document.querySelectorAll('.button');
 
-buttons.addEventListener('click', () => {
-  console.log('click');
-  buttons.classList.add('active');
-});
+for (const button of buttons) {
+  button.addEventListener('click', () => {
+    resetButton();
+    button.classList.add('active');
+  });
+}
+
+function resetButton() {
+  for (const button of buttons) {
+    button.classList.remove('active');
+  }
+}
