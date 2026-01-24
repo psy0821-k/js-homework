@@ -1,0 +1,52 @@
+.card-card {
+  width: 510px;
+  height: 200px;
+  border-radius: 14px;
+  padding: 1rem 0.5rem;
+  border: 1px solid #dedede;
+  background-color: #727f8e;
+  .card-name {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 14px;
+    line-height: 100%;
+    vertical-align: middle;
+    color: #fff;
+  }
+
+  .card-number {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 10%;
+    vertical-align: middle;
+    color: #fff;
+    margin-top: 29px;
+  }
+
+  .card-price-title {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
+    letter-spacing: 2%;
+    vertical-align: middle;
+    color: #e3e5e8;
+    margin-top: 29px;
+  }
+
+  .card-price {
+    color: #fff;
+    font-weight: Bold;
+    font-size: 20px;
+    vertical-align: middle;
+    margin-top: 9px;
+  }
+  .card-kind {
+    font-weight: 700;
+    color: #fff;
+    font-size: 16px;
+    text-align: right;
+    vertical-align: middle;
+    margin-top: -26px;
+    margin-right: 26px;
+  }
+}

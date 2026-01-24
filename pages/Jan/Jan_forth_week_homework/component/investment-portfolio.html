@@ -3,9 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>investment-portfolio-content component</title>
+    <link rel="stylesheet" href="../asset/css/common.css" />
+    <link rel="stylesheet" href="../asset/css/tab.css" />
+    <link rel="stylesheet" href="../asset/css/tab-nav.css" />
+    <link rel="stylesheet" href="../asset/css/account-info.css" />
+    <link rel="stylesheet" href="../asset/css/recent-transaction.css" />
+    <link rel="stylesheet" href="../asset/css/investment-portfolio.css" />
+    <script defer src="../scripts/tab.js"></script>
+    <script defer src="../scripts/readMoney.js"></script>
   </head>
   <body>
-    <div class="card-content"></div>
+      <div class="investment-portfolio-content">
+        <dl class="investment-portfolio-card">
+          <div>
+            <dt class="sr-only">주식 나라</dt>
+            <dd class="investment-portfolio-nation" data-type="주식">국내주식</dd>
+            <dt class="sr-only">보유 수</dt>
+            <dd class="investment-portfolio-stock-quantity" data-type="주식 보유 수">10 종목 보유</dd>
+          </div>
+
+          <div>
+            <dt class="sr-only">금액</dt>
+            <dd class="investment-portfolio-principal" data-type="">3,500,000 원</dd>
+            <dt class="sr-only">증감 퍼센트</dt>
+            <dd class="investment-portfolio-percent" data-type="">+5.2%</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,0 +1,48 @@
+.investment-portfolio-card {
+  width: 510px;
+  height: 79px;
+  border: 1px solid hsl(0, 0%, 87%);
+  border-radius: 14px;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .investment-portfolio-nation {
+    font-weight: bold;
+    color: #8f9aa5;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: -4%;
+    color: #6b8094;
+  }
+
+  .investment-portfolio-stock-quantity {
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 4px;
+    line-height: 100%;
+    vertical-align: middle;
+    color: #8f9aa5;
+  }
+
+  .investment-portfolio-principal {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 1rem;
+    line-height: 100%;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .investment-portfolio-percent {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 100%;
+    text-align: right;
+    color: #d4392c;
+    vertical-align: middle;
+    margin-top: 0.5rem;
+  }
+}

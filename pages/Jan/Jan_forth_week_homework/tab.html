@@ -9,21 +9,27 @@
     <link rel="stylesheet" href="./asset/css/tab-nav.css" />
     <link rel="stylesheet" href="./asset/css/account-info.css" />
     <link rel="stylesheet" href="./asset/css/recent-transaction.css" />
+    <link rel="stylesheet" href="./asset/css/investment-portfolio.css" />
+    <link rel="stylesheet" href="./asset/css/card.css" />
     <script defer src="./scripts/tab.js"></script>
     <script defer src="./scripts/readMoney.js"></script>
   </head>
   <body>
-      <div class="recent-transaction-content">
-        <dl class="recent-transaction-card">
+      <div class="card-content">
+        <dl class="card-card">
           <div>
-            <dt class="sr-only">날짜</dt>
-            <dd class="recent-date" data-type="날짜">2026.01.21</dd>
-            <dt class="sr-only">사용처</dt>
-            <dd class="recent-used-place" data-type="사용처">GS25 편의점</dd>
+            <dt class="sr-only">카드이름</dt>
+            <dd class="card-name" data-type="카드 이름">신한카드</dd>
+            <dt class="sr-only">카드 넘버</dt>
+            <dd class="card-number" data-type="카드 넘버">1234 5678 9012 3456</dd>
+            <dt class="card-price-title">이번 달 사용액</dt>
+            <dd class="card-price" data-type="이번 달 사용액">1,234,560 원</dd>
           </div>
 
-          <dt class="sr-only">금액</dt>
-          <dd class="recent-principal" data-type="금액">+ 3,500,000 원</dd>
+          <div>
+            <dt class="sr-only">카드 종류</dt>
+            <dd class="card-kind" data-type="카드 종류">VISA</dd>
+          </div>
         </dl>
       </div>
     </div>
