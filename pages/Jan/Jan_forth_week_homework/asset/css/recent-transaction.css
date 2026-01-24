@@ -1,0 +1,33 @@
+.recent-transaction-card {
+  width: 510px;
+  height: 79px;
+  border: 1px solid hsl(0, 0%, 87%);
+  border-radius: 14px;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .recent-date {
+    font-weight: 400;
+    color: #8f9aa5;
+    font-size: 12px;
+    line-height: 100%;
+  }
+
+  .recent-used-place {
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 4%;
+    margin-top: 12px;
+  }
+
+  .recent-principal {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 100%;
+    color: #055fea;
+  }
+}
