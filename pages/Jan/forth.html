@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1월 4주차 과제</title>
+    <link rel="stylesheet" href="../../asset/css/index.css" />
+
+    <style>
+      img{
+        width:800px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../../index.html"> 뒤로가기 </a>
+    </header>
+    <main>
+      <h1>멋사 과제</h1>
+
+      <section class="img-container">
+        <h2>1월 4주차 과제</h2>
+        <img width="600" src="../../asset/image/Jan/forth-week/1.jpg" alt="" />
+
+        <script>
+          const imgContainer = document.querySelector('.img-container')
+          for(let i=2; i < 10; i++){
+            imgContainer.innerHTML +=`<img width="600" style="rotate:270deg" src="../../asset/image/Jan/forth-week/${i}.jpg" alt="" />`
+          }
+        </script>
+      </section>
+    </main>
+  </body>
+</html>
