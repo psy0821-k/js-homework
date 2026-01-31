@@ -14,7 +14,7 @@
       border-radius: 1.25rem;
       box-shadow: 0 0 0 4px #f2f5f8;
       transition: all 0.3s ease-in;
-
+      cursor: pointer;
       &:hover {
         transform: translateY(-10px);
         box-shadow: 0 0 0 4px #beccdb;
