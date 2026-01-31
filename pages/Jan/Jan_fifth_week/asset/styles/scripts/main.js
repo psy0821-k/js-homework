@@ -45,7 +45,6 @@ const selectionInfo = document.querySelector('.selection-info');
 const selectionPlanName = selectionInfo.querySelector('.highlight');
 const selectionPlanPrice = selectionInfo.querySelector('[data-id="plan-price"]');
 planCards.forEach(planCard => {
-  console.log(planCard);
   planCard.addEventListener('click', e => {
     const card = e.target.closest('.plan-card');
 
