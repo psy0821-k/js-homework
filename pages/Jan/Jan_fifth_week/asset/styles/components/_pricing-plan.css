@@ -92,7 +92,7 @@
       margin-block-end: 8px;
 
       &::before {
-        content: "✓";
+        content: '✓';
         margin-inline-end: 8px;
         color: var(--plan-features-pseudo-color);
         font-weight: bold;
@@ -114,7 +114,6 @@
       border-radius: 16px;
     }
   }
-
 }
 
 .selection-info {
@@ -127,7 +126,7 @@
   justify-content: center;
 
   width: 50%;
-  margin: 50px auto; 
+  margin: 50px auto;
   padding: 20px 40px;
   border-radius: 50px;
   background: var(--selection-info-bg-color);
