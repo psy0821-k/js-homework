@@ -51,7 +51,7 @@ planCards.forEach(planCard => {
 
     if (card) {
       removeSelecte();
-      e.stopPropagation();
+      e.preventDefault();
       card.classList.add('selected');
       card.setAttribute('aria-pressed', 'true');
       showSelectionInfo(card);
