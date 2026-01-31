@@ -1,50 +1,82 @@
 .plan-form {
-  .plan-title {
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .plan-price {
-    text-align: center;
-  }
   .plan-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1.5rem;
     justify-content: center;
-  }
-  .plan-card-container {
-    position: relative;
-    background-color: var(--white);
-    width: 278px;
-    height: 338px;
-    padding: 40px 33px;
-    border-radius: 1.25rem;
-    border: 2px solid #f2f5f8;
 
-    .plan-input {
-      outline: 0;
-    }
+    .plan-card-container {
+      position: relative;
+      background-color: var(--white);
+      width: 278px;
+      height: 338px;
+      padding: 40px 33px;
+      border-radius: 1.25rem;
+      box-shadow: 0 0 0 4px #f2f5f8;
+      transition: all 0.3s ease-in;
 
-    .check-mark {
-      /* display: none; */
-      position: absolute;
-      width: 28px;
-      inset: 0;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 0 4px #beccdb;
+      }
 
-    .plan-feature-list {
-      .plan-feature {
-        list-style-type: none;
-        background: url('../../image/icon-check.svg') 7px 7.5px no-repeat;
-        padding-left: calc(1rem + 5.5px);
-        margin-block-end: 1rem;
+      &.active {
+        background-color: #d2e0f9;
+        border: 2px solid #055fea;
+        transform: translateY(-1rem);
+      }
 
-        font-size: 15px;
-        font-weight: 400;
-        letter-spacing: 1%;
+      &:focus-visible {
+        outline: 0;
+        box-shadow: 0 0 0 4px #c8d8f4;
+      }
+      .plan-info {
+        border-bottom: 1px solid #f5f7fa;
+        .plan-title {
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 1rem;
+          letter-spacing: 4%;
+          color: #8b9db1;
+          margin-bottom: 25px;
+        }
+        .plan-price {
+          text-align: center;
+          font-style: 2rem;
+          font-weight: 700;
+          letter-spacing: 2%;
+          color: #091520;
+          margin-bottom: 25px;
+        }
+      }
+
+      .plan-input {
+        outline: 0;
+      }
+
+      .check-mark {
+        display: none;
+        position: absolute;
+        width: 28px;
+        inset: 0;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .plan-feature-list {
+        margin-block-start: 25px;
+        .plan-feature {
+          list-style-type: none;
+          background: url('../../image/icon-check.svg') 7px 7.5px no-repeat;
+          padding-left: calc(1rem + 5.5px);
+          margin-block-end: 1rem;
+
+          font-size: 15px;
+          font-weight: 400;
+          letter-spacing: 1%;
+        }
       }
     }
   }

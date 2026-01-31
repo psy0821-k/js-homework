@@ -9,54 +9,48 @@
   </head>
   <body>
     <form class="plan-form" action="#" method="post">
-      <ul class="plan-list">
-        <li class="plan-card-container" tabindex="1" role="radio">
-          <div class="check-mark" aria-hidden>
-            <img src="./asset/image/icon-checkmark.png" alt="선택" />
-          </div>
-          <h2 class="plan-title">PLAN NAME</h2>
-          <p class="plan-price">&#x20A9;PLAN PRICE</p>
-          <ul class="plan-feature-list">
-            <li class="plan-feature">
-              <span>기능</span>
-            </li>
-            <li class="plan-feature">
-              <span>기능</span>
-            </li>
-          </ul>
-          <label for="plan-type" class="sr-only">카드 선택하기</label>
-          <input id="plan-type" class="sr-only plan-input" type="radio" name="planType" value="basic" tabindex="-1" />
-        </li>
-
-        <li class="plan-card-container" tabindex="1" role="radio">
-          <h2 class="plan-title">PLAN NAME</h2>
-          <p class="plan-price">&#x20A9;PLAN PRICE</p>
-          <ul class="plan-feature-list">
-            <li class="plan-feature">
-              <span>기능</span>
-            </li>
-            <li class="plan-feature">
-              <span>기능</span>
-            </li>
-          </ul>
-          <label for="plan-type" class="sr-only">카드 선택하기</label>
-          <input id="plan-type" class="sr-only" type="radio" name="planType" value="basic" tabindex="-1" />
-        </li>
-        <li class="plan-card-container" tabindex="1" role="radio">
-          <h2 class="plan-title">PLAN NAME</h2>
-          <p class="plan-price">&#x20A9;PLAN PRICE</p>
-          <ul class="plan-feature-list">
-            <li class="plan-feature">
-              <span>기능</span>
-            </li>
-            <li class="plan-feature">
-              <span>기능</span>
-            </li>
-          </ul>
-          <label for="plan-type" class="sr-only">카드 선택하기</label>
-          <input id="plan-type" class="sr-only" type="radio" name="planType" value="basic" tabindex="-1" />
-        </li>
-      </ul>
+      <div class="plan-list">
+        <ul class="">
+          <li class="plan-card-container" tabindex="1" role="radio" aria-checked="false">
+            <div class="check-mark" aria-hidden="true">
+              <img src="./asset/image/icon-checkmark.png" alt="선택" />
+            </div>
+            <div class="plan-info">
+              <h2 class="plan-title">basic</h2>
+              <p class="plan-price">&#x20A9;10,000원</p>
+            </div>
+            <ul class="plan-feature-list">
+              <li class="plan-feature">
+                <span>기능</span>
+              </li>
+              <li class="plan-feature">
+                <span>기능</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <input class="sr-only plan-input" type="radio" name="planType" value="basic" tabindex="-1" />
+        <ul>
+          <li class="plan-card-container" tabindex="1" role="radio" aria-checked="false">
+            <div class="check-mark" aria-hidden="true">
+              <img src="./asset/image/icon-checkmark.png" alt="선택" />
+            </div>
+            <div class="plan-info">
+              <h2 class="plan-title">basic</h2>
+              <p class="plan-price">&#x20A9;10,000원</p>
+            </div>
+            <ul class="plan-feature-list">
+              <li class="plan-feature">
+                <span>기능</span>
+              </li>
+              <li class="plan-feature">
+                <span>기능</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <input class="sr-only plan-input" type="radio" name="planType" value="basic" tabindex="-1" />
+      </div>
     </form>
   </body>
 </html>
