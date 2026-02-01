@@ -48,9 +48,8 @@ planCards.forEach(planCard => {
   planCard.addEventListener('click', e => {
     const card = e.target.closest('.plan-card');
 
-    if (card) {
+    if (card && planCard.contains(card)) {
       removeSelecte();
-      e.preventDefault();
       card.classList.add('selected');
       card.setAttribute('aria-pressed', 'true');
       showSelectionInfo(card);
