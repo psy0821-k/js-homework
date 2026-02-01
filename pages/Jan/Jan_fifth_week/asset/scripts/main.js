@@ -48,12 +48,21 @@ planCards.forEach(planCard => {
   planCard.addEventListener('click', e => {
     const card = e.target.closest('.plan-card');
 
-    if (card && planCard.contains(card)) {
-      removeSelecte();
-      card.classList.add('selected');
-      card.setAttribute('aria-pressed', 'true');
-      showSelectionInfo(card);
-    }
+    // 이벤트 위임
+    // 방법 1
+    if (!card) return;
+    removeSelecte();
+    card.classList.add('selected');
+    card.setAttribute('aria-pressed', 'true');
+    showSelectionInfo(card);
+
+    // 방법 2
+    // if (card && planCard.contains(card)) {
+    //   removeSelecte();
+    //   card.classList.add('selected');
+    //   card.setAttribute('aria-pressed', 'true');
+    //   showSelectionInfo(card);
+    // }
   });
 });
 
